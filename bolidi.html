@@ -1,0 +1,653 @@
+<html>
+
+<head>
+    <title>Билоди</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* .content {
+      font-family: arial, verdana;
+      margin: 0 auto;
+    } */
+
+        .icon {
+            background-color: #0b0083;
+            float: left;
+            width: 200px;
+            height: 90px;
+            padding-top: 10px;
+        }
+
+        /* .img {
+      overflow-clip-margin: content-box;
+      overflow: clip;
+    } */
+
+        .title {
+            background-color: #00028b;
+            height: 170px;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .title h1 {
+
+            text-align: center;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-top: 35px;
+            padding-right: 75px;
+            letter-spacing: 5px;
+            position: relative;
+        }
+
+        .menuH a:link,
+        a:visited {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 6px;
+        }
+
+        .dropdown-content a {
+            color: rgb(255, 255, 255);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .a {
+            position: relative;
+            background-color: #ff0000;
+            width: 120px;
+            height: 35px;
+            border-radius: 7px;
+            line-height: 100px;
+            box-shadow: 3px 3px 2px #1d2204;
+            color: #f1f1f1;
+            margin: 7px;
+            text-align: center;
+            font: bold 15px arial, verdana;
+            padding: 10px 10px;
+        }
+
+        .menuH a:hover,
+        a:active {
+            background-color: white;
+            color: red;
+        }
+
+        .panelMenuH {
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            position: page;
+            background-color: #2762a1;
+            padding: 10px;
+            position: relative;
+
+        }
+
+        .dropbtn {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+            height: 35px;
+            margin: 7px;
+            border-radius: 7px;
+            line-height: 30px;
+            text-align: center;
+            box-shadow: 3px 3px 2px #262c05;
+            background-color: #ff0000;
+            padding: 12px;
+            font: bold 12pt arial, verdana;
+            color: #ffffff;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* .dropdown {
+      position: relative;
+      display: inline-block;
+    } */
+
+        .dropdown-content {
+            font: bold 10pt arial, verdana;
+            display: none;
+            position: absolute;
+            background-color: #ff0000;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fc0000;
+            color: #f1f1f1;
+        }
+
+        .dropbtn:hover .dropdown-content {
+            display: block;
+            text-align: center;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #ffffff;
+            color: red;
+        }
+
+        /* .fon {
+
+      min-height: 100%;
+      background-position: center;
+      background-size: cover;
+    } */
+
+        /* .bolid {
+      max-width: 100%;
+
+    } */
+
+        .news {
+            font-family: Arial;
+            position: page;
+            text-align: center;
+            color: #ffffff;
+            background-image: url("https://raw.githubusercontent.com/GergiDD22/Proekt/main/red-bull-bolides.jpg");
+            background-position: center;
+            background-size: cover;
+        }
+
+        .footer {
+            background-color: #00028b;
+            text-align: center;
+            font-size: 0.7em;
+            font-family: Arial;
+            padding: 10px;
+            color: #ffffff;
+            font-size: 15px;
+        }
+
+        .Smenu {
+            display: inline;
+        }
+
+        .scicon {
+            padding: 10px 10px;
+        }
+
+        .sc {
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+        }
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none;
+            margin: 0 auto;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        .slideshow-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            margin-top: 6rem;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: 22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 17px;
+            padding: 17px;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #843b3b;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+
+
+        body {
+            font-family: Verdana, sans-serif;
+            margin: 0
+        }
+
+        .mySlides {
+            display: none
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        * {
+            box-sizing: border-box;
+            /* border: 3px solid red; */
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 15px;
+        }
+
+        /* За мобилни телефони: */
+        [class*="col-"] {
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+
+            /* За таблети: */
+            .col-m-1 {
+                width: 8.33%;
+            }
+
+            .col-m-2 {
+                width: 16.66%;
+            }
+
+            .col-m-3 {
+                width: 25%;
+            }
+
+            .col-m-4 {
+                width: 33.33%;
+            }
+
+            .col-m-5 {
+                width: 41.66%;
+            }
+
+            .col-m-6 {
+                width: 50%;
+            }
+
+            .col-m-7 {
+                width: 58.33%;
+            }
+
+            .col-m-8 {
+                width: 66.66%;
+            }
+
+            .col-m-9 {
+                width: 75%;
+            }
+
+            .col-m-10 {
+                width: 83.33%;
+            }
+
+            .col-m-11 {
+                width: 91.66%;
+            }
+
+            .col-m-12 {
+                width: 100%;
+            }
+
+            .prev,
+            .next,
+            .text {
+                font-size: 20px
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            /* За компютър: */
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+
+            .slideshow-container {
+                margin-top: 3rem;
+            }
+        }
+    </style>
+    <script>
+        let slideIndex = 1;
+        let slideInterval;
+
+        showSlides(slideIndex);
+        startSlideshow();
+
+        function plusSlides(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex += n);
+            startSlideshow();
+        }
+
+        function currentSlide(n) {
+            clearInterval(slideInterval);
+            showSlides(slideIndex = n);
+            startSlideshow();
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function startSlideshow() {
+            slideInterval = setInterval(function () {
+                plusSlides(1);
+            }, 5000);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div class="row"> -->
+    <!-- <div class="content col-12 col-m-12"> -->
+    <!-- <div class="col-12 col-m-12"> -->
+    <div class="title">
+        <a href="proizhod.html"><img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/Red-Bull-Logo.png"
+                alt="icon" class="icon"></a>
+        <!-- <div class="icon"> -->
+        <!-- </div> -->
+        <h1>Red Bull Racing</h1>
+    </div>
+    <div class="panelMenuH">
+        <!-- <div class="dropdown"> -->
+        <!-- </div> -->
+        <div class="menuH">
+            <div class="dropbtn">История
+                <div class="dropdown-content">
+                    <a href="proizhod.html">Произход</a>
+                    <a href="cosworth&ferrari.html">Период с двигатели на Cosworth и Ferrari</a>
+                    <a href="Renault.html">Период с двигатели на Renault</a>
+                    <a href="TagHeuer.html">Период с двигатели на Tag Heuer</a>
+                    <a href="Honda.html">Период с двигатели на Honda</a>
+                </div>
+            </div>
+            <a href="piloti.html" class="a">Пилоти</a>
+            <a href="bolidi.html" class="a">Болиди</a>
+            <a href="informaciq.html" class="a">Информация</a>
+            <a href="contacts.html" class="a">Контакти</a>
+        </div>
+    </div>
+    <!-- </div> -->
+    <br>
+    <div class="news col-12 col-m-12">
+        <h2 class="col-12 col-m-12">Билоди</h2>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB1-gallery.jpg" style="width:100%">
+                <div class="text">RB1</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB2-gallery.jpg" style="width:100%">
+                <div class="text">RB2</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB3-gallery.jpg" style="width:100%">
+                <div class="text">RB3</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB4-gallery.jpg" style="width:100%">
+                <div class="text">RB4</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB5-gallery.jpg" style="width:100%">
+                <div class="text">RB5</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB6-gallery.jpg" style="width:100%">
+                <div class="text">RB6</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB7-gallery.jpg" style="width:100%">
+                <div class="text">RB7</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB8-gallery.jpg" style="width:100%">
+                <div class="text">RB8</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB9-gallery.jpg" style="width:100%">
+                <div class="text">RB9</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB10-gallery.jpg" style="width:100%">
+                <div class="text">RB10</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB11-gallery.jpg" style="width:100%">
+                <div class="text">RB11</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB12-gallery.jpg" style="width:100%">
+                <div class="text">RB12</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB13-gallery.jpg" style="width:100%">
+                <div class="text">RB13</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB14-gallery.jpg" style="width:100%">
+                <div class="text">RB14</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB15-gallery.jpg" style="width:100%">
+                <div class="text">RB15</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB16-gallery.jpg" style="width:100%">
+                <div class="text">RB16</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB16B-gallery.jpg" style="width:100%">
+                <div class="text">RB16B</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB18-gallery.jpg" style="width:100%">
+                <div class="text">RB18</div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/RB19-gallery.jpg" style="width:100%">
+                <div class="text">RB19</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+            <span class="dot" onclick="currentSlide(10)"></span>
+            <span class="dot" onclick="currentSlide(11)"></span>
+            <span class="dot" onclick="currentSlide(12)"></span>
+            <span class="dot" onclick="currentSlide(13)"></span>
+            <span class="dot" onclick="currentSlide(14)"></span>
+            <span class="dot" onclick="currentSlide(15)"></span>
+            <span class="dot" onclick="currentSlide(16)"></span>
+            <span class="dot" onclick="currentSlide(17)"></span>
+            <span class="dot" onclick="currentSlide(18)"></span>
+            <span class="dot" onclick="currentSlide(19)"></span>
+        </div>
+        <br>
+    </div>
+    &nbsp;
+    <div class="footer col-12 col-m-12">
+        Последвайте Red Bull Racing в:<br><br>
+        <div class="Smenu">
+            <a href="https://www.facebook.com/redbullracing" class="scicon"><img
+                    src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/Facebook-logo%20(1).png"
+                    class="sc"></a>
+        </div>
+        <div class="Smenu">
+            <a href="https://www.instagram.com/redbullracing/" class="scicon"><img
+                    src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/instagram-icon.png" class="sc"></a>
+        </div>
+        <div class="Smenu">
+            <a href="https://twitter.com/intent/follow?screen_name=redbullracing" class="scicon"><img
+                    src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/twitter-logo.png" class="sc"></a>
+        </div>
+        <div class="Smenu">
+            <a href="https://www.youtube.com/@redbullracing" class="scicon"><img
+                    src="https://raw.githubusercontent.com/GergiDD22/Proekt/main/youtube-logo.png" class="sc"></a>
+        </div>
+    </div>
+    <!-- </div> -->
+    <!-- </div> -->
+</body>
+
+</html>
